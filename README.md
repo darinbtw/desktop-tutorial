@@ -1,6 +1,8 @@
 # Welcome to GitHub Desktop!
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+You can organize files into folders if you want to keep things organized.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
-Vladislav
+To get started, enter the full path of your folder on the fourth line.
+And dont forget in line
+
+And don't forget to specify where the files should be moved from and to in order for the cleanup to take place.
