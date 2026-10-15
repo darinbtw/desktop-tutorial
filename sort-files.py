@@ -1,7 +1,9 @@
 from pathlib import Path
 import shutil
 
-path_home = Path.home() / 'Test_downloads' #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
+path_home = Path('C:\Users\VladOS\Test_downloadss') #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
+
+# Path.home() / 'downloads'
 
 #categories of suffixes in dictonary
 folders = {
