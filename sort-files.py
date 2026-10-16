@@ -1,7 +1,7 @@
 from pathlib import Path
 import shutil
 
-path_home = Path('C:\Users\VladOS\Test_downloadss') #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
+sourse_folder = Path(r'C:\Users\VladOS\Test_downloads') #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
 
 # Path.home() / 'downloads'
 
@@ -32,10 +32,17 @@ folders = {
     '.py': 'Code', '.js': 'Code', '.html': 'Code', '.css': 'Code',
 }
 
-for name in path_home.iterdir():
+for name in sourse_folder.iterdir():
     if name.is_file():
         lower_name = name.suffix.lower() #your name suffix from a file
         folder = folders.get(lower_name, 'Others')
         print(f'{folder} -> {name.name}') #for debugging
-        (path_home/folder).mkdir(exist_ok=True) #creating new folder if does not exist
-        shutil.move(name, path_home/folder/name.name) #move from/to
+        (sourse_folder/folder).mkdir(exist_ok=True) #creating new folder if does not exist
+        target = sourse_folder/folder/name.name
+
+        counter = 1
+        while target.exists():
+            target = sourse_folder/folder/f'{name.stem} ({counter}){name.suffix}'
+            counter += 1
+
+        shutil.move(name, target) #move from/to
