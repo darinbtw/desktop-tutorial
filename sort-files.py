@@ -1,7 +1,9 @@
 from pathlib import Path
 import shutil
 
-sourse_folder = Path(r'C:\Users\VladOS\Test_downloads') #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
+user_input = input('Input your path to the folder:')
+
+sourse_folder = Path(user_input) #The main path, you wish to clear (C:\Users\uesrname\Test_downloads)
 
 # Path.home() / 'downloads'
 
@@ -40,6 +42,7 @@ for name in sourse_folder.iterdir():
         (sourse_folder/folder).mkdir(exist_ok=True) #creating new folder if does not exist
         target = sourse_folder/folder/name.name
 
+        # A loop in case a file with the same name already exists
         counter = 1
         while target.exists():
             target = sourse_folder/folder/f'{name.stem} ({counter}){name.suffix}'
